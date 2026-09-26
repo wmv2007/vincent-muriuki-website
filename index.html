@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vincent Muriuki</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <header>
+    <a class="logo-img" href="#home">
+      <img class="logo" src="images/white-name-logo.png" alt="Vincent Muriuki Logo">
+    </a>
+    <div class="header-right">
+      <nav class="nav-panel">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="cart js-cart-button" type="button">
+        <span class="cart-icon">
+          <img class="cart-logo" src="images/cart-icon.png" alt="cart icon">
+          <span class="cart-quantity js-cart-quantity">0</span>
+        </span>
+        <div class="cart-text">Cart</div>
+      </button>
+    </div>
+  </header>
+  <section id="home" class="Home-tab">
+    <div class="home-content js-home-content">
+    </div>
+  </section>
+
+  <section id="services" class="Services-tab">
+    <h2 class="head">
+      Services
+    </h2>
+    <div class="product-grid js-product-grid">
+    </div>
+  </section>
+
+  <section id="contact" class="Contact-tab">
+    <h2 class="head">
+      contact
+    </h2>
+    <h1 class="contact-info">
+      For more information or inquiries.
+    </h1>
+    <p class="head">
+      Contact or Email via:
+    </p>
+    <div class="contact-buttons">
+      <a class="order-button whatsapp-button" href="https://wa.me/254739677283" target="_blank">WhatsApp</a>
+      <a class="order-button email-button" href="mailto:vincentweb123@gmail.com">Email</a>
+      <a class="order-button call-button" href="tel:+254739677283" target="_blank">Call Me</a>
+    </div>
+    <a href="https://www.tiktok.com/@vincent.software" target="_blank">TikTok</a>
+    <a href="https://www.instagram.com/vincentweb123/" target="_blank">Instagram</a>
+  </section>
+
+  <div class="order-modal js-order-modal" hidden>
+    <div class="order-modal-box">
+      <button class="modal-close js-modal-close" type="button">&times;
+      </button>
+      <h2>Your Order</h2>
+
+      <ul class="order-items js-order-items"></ul>
+      <p>Total: $<span class="js-order-total">0.00</span></p>
+
+      <form class="order-form js-order-form">
+        <label for="order-name">Full name</label>
+        <input id="order-name" name="name" type="text" required>
+
+        <label for="order-email">Email</label>
+        <input id="order-email" name="email" type="email" required>
+
+        <label for="order-phone">Phone / WhatsApp</label>
+        <div class="phone-field">
+          <select id="order-country-code" name="countryCode" aria-label="Country code">
+            <option value="+254" selected>Kenya +254</option>
+            <option value="+256">Uganda +256</option>
+            <option value="+255">Tanzania +255</option>
+            <option value="+250">Rwanda +250</option>
+            <option value="+251">Ethiopia +251</option>
+            <option value="+234">Nigeria +234</option>
+            <option value="+233">Ghana +233</option>
+            <option value="+27">South Africa +27</option>
+            <option value="+20">Egypt +20</option>
+            <option value="+44">United Kingdom +44</option>
+            <option value="+1">USA / Canada +1</option>
+            <option value="+91">India +91</option>
+            <option value="+971">UAE +971</option>
+            <option value="+49">Germany +49</option>
+            <option value="+33">France +33</option>
+          </select>
+
+          <input id="order-phone" name="phone" type="tel" inputmode="numeric" placeholder="712345678" autocomplete="tel-national">
+        </div>
+
+        <label for="order-message">Details about your project</label>
+        <textarea id="order-message" name="message" rows="4"></textarea>
+
+        <button class="send-order-button" type="submit">Send Order</button>
+        <p class="order-status js-order-status"></p>
+      </form>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="module" src="scripts/personal-web.js"></script>
+
+</body>
+</html>
