@@ -13,28 +13,29 @@ export function getService (serviceId) {
 
 export const services = [{
   id: '001',
-  name: 'Simple one page websites created using simple languages.',
+  includes: '1 responsive page, up to 5 sections, contact form, 2 rounds of edits.',
   shortName: 'One-Page Website',
-  priceCents: '15000'
+  priceCents: '8000',
+  note: '"Hosting and domain name not included."',
+  example: 'examples/barber_shop_project/cut and craft.html'
 }, {
   id: '002',
-  name: `Simple multi-page websites created using simple languages.
-No JavaScript.`,
+  includes: `Up to 5 pages, shared navigation, mobile-friendly design, 2 rounds of edits.`,
   shortName: 'Multi-Page Website',
-  priceCents: '18500'
+  priceCents: '13000',
+  note: '"Hosting and domain name not included."',
+  example: 'examples/Sunrise_Bakery_Client_HTML_CSS_Project/starter/sunrise-bakery.html'
 }, {
   id: '003',
-  name: 'Simple one page websites created using simple lanuages with javascript.',
+  includes: '1 responsive page with interactive features(menu, form checks, accordion), 2 rounds of edits.',
   shortName: 'One-Page Website + JavaScript',
-  priceCents: '22386'
+  note: '"Hosting and domain name not included."',
+  priceCents: '15000',
+  example: 'examples/Sunrise_Bakery_js/starter/sunrise-bakery.html'
 }, {
   id: '004',
-  name: 'Simple multipage page websites created using simple lanuages with javascript.',
+  includes: 'Up to 5 pages with interactive features, mobile-friendly, 2 rounds of edits.',
   shortName: 'Multi-Page Website + JavaScript',
-  priceCents: '39999'
-}, {
-  id: '005',
-  name: 'complex multi page websites created using simple lanuages with javascript.',
-  shortName: 'Advanced Website + JavaScript',
-  priceCents: '180000'
+  note: '"Hosting and domain name not included."',
+  priceCents: '25000'
 }];
