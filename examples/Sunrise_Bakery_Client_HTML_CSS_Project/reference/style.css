@@ -1,0 +1,305 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #3b2a20;
+  background: #fffaf5;
+  line-height: 1.6
+}
+
+a {
+  color: inherit
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: #fff;
+  border-bottom: 1px solid rgb(234, 223, 213)
+}
+
+.logo {
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 20px;
+  letter-spacing: 1px
+}
+
+.logo span {
+  color: #d97706
+}
+
+nav {
+  display: flex;
+  gap: 25px
+}
+
+nav a {
+  text-decoration: none;
+  color: #5f5149;
+  font-weight: 600
+}
+
+nav a:hover {
+  color: #d97706
+}
+
+.hero {
+  min-height: 88vh;
+  padding: 80px 8%;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 50px;
+  align-items: center;
+  background: #fff3e3
+}
+
+.hero h1 {
+  font-size: clamp(45px, 6vw, 76px);
+  line-height: 1.02;
+  margin: 12px 0 20px
+}
+
+.lead {
+  max-width: 580px;
+  color: #705e52;
+  font-size: 18px;
+  margin-bottom: 30px
+}
+
+.hero img {
+  width: 100%;
+  border-radius: 28px;
+  box-shadow: 0 20px 50px #0001
+}
+
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 800;
+  color: #d97706
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  background: rgb(217, 119, 6);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 800;
+  margin: 4px 8px 4px 0
+}
+
+.button:hover {
+  background: #b45309
+}
+
+.outline {
+  background: transparent;
+  color: rgb(180, 83, 9);
+  border: 1px solid rgb(217, 119, 6)
+}
+
+.section {
+  padding: 90px 8%;
+  max-width: 1200px;
+  margin: auto
+}
+
+.section h2,
+.contact h2 {
+  font-size: 40px;
+  line-height: 1.15;
+  margin: 8px 0 25px
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px
+}
+
+.about>p {
+  color: #705e52;
+  font-size: 18px
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 30px
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eadfd5;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px #0000000a
+}
+
+.card img {
+  display: block;
+  width: 100%
+}
+
+.card div {
+  padding: 22px
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 6px
+}
+
+.card p,
+.feature p {
+  color: #705e52
+}
+
+.card strong {
+  display: block;
+  margin-top: 15px;
+  color: #d97706
+}
+
+.benefits {
+  background: #f8eadb;
+  max-width: none
+}
+
+.feature {
+  padding: 25px;
+  background: #fff;
+  border-radius: 14px
+}
+
+.feature b {
+  color: #d97706;
+  font-size: 14px
+}
+
+.hours {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px
+}
+
+.hours-list {
+  background: #fff;
+  border: 1px solid #eadfd5;
+  border-radius: 15px;
+  padding: 20px 25px
+}
+
+.hours-list p {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid #eee
+}
+
+.hours-list p:last-child {
+  border-bottom: 0
+}
+
+.hours-list span {
+  color: #705e52
+}
+
+.contact {
+  text-align: center;
+  padding: 90px 8%;
+  background: #3b2a20;
+  color: #fff
+}
+
+.contact .eyebrow {
+  color: #fbbf7a
+}
+
+.contact p {
+  color: #eadfd5;
+  margin-bottom: 20px
+}
+
+footer {
+  padding: 35px 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  background: #241912;
+  color: #eadfd5
+}
+
+footer a {
+  color: #fbbf7a
+}
+
+.copyright {
+  grid-column: 1/-1;
+  border-top: 1px solid #ffffff22;
+  padding-top: 20px;
+  font-size: 13px
+}
+
+@media(max-width:800px) {
+  .header {
+    flex-direction: column;
+    gap: 15px
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 55px
+  }
+
+  .hero img {
+    order: -1
+  }
+
+  .about,
+  .hours {
+    grid-template-columns: 1fr;
+    gap: 30px
+  }
+
+  .grid {
+    grid-template-columns: 1fr
+  }
+
+  .section h2,
+  .contact h2 {
+    font-size: 34px
+  }
+
+  footer {
+    grid-template-columns: 1fr
+  }
+
+  .copyright {
+    grid-column: auto
+  }
+
+  nav {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center
+  }
+}

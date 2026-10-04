@@ -1,0 +1,376 @@
+/* SUNRISE BAKERY CLIENT PROJECT
+   Build this yourself from the CLIENT_BRIEF.
+   HTML + CSS ONLY.
+*/
+
+/* 1. CSS reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2. Body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(255 250 245);
+  color: rgb(59 42 32);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+section {
+  padding: 90px 8%;
+  max-width: 1500px;
+  margin: auto;
+}
+
+/* 3. Header + navigation */
+header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  padding: 20px 8%;
+  border-bottom: 1px solid rgb(234, 223, 213);
+}
+
+header nav a:hover {
+  color: rgb(217, 119, 6);
+  cursor: pointer;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.logo span {
+  color: rgb(217 119 6);
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 700;
+  color: rgba(59, 42, 32, 0.838);
+}
+
+/* 4. Hero */
+.home {
+  display: grid;
+  grid-template-columns: 1.2fr .9fr;
+  padding: 80px 8%;
+  min-height: 88vh;
+  gap: 50px;
+  align-items: center;
+  background-color: rgb(255 243 227);
+}
+
+.top {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: rgb(217, 119, 6);
+}
+
+.home h1 {
+  font-size: clamp(45px, 6vw, 76px);
+  line-height: 1.02;
+  margin: 12px 0 20px;
+}
+
+.p2 {
+  max-width: 580px;
+  font-size: 18px;
+  color: rgba(59, 42, 32, 0.719);
+  margin-bottom: 30px;
+}
+
+.menu-button {
+  display: inline-block;
+  text-decoration: none;
+  background-color: rgb(217, 119, 6);
+  color: rgb(255 255 255);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 800;
+  margin: 4px 8px 4px 0;
+}
+
+.whatsapp {
+  display: inline-block;
+  text-decoration: none;
+  background-color: transparent;
+  border: solid;
+  border-width: 1px;
+  border-radius: 8px;
+  border-color: rgb(217, 119, 6);
+  padding: 12px 20px;
+  margin-left: 10px;
+  font-weight: 800;
+  color: rgb(180, 83, 9);
+  margin: 4px 8px 4px 0;
+}
+
+.menu-order-button {
+  margin-top: 50px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(236, 127, 43);
+}
+
+.menu-button:hover,
+.whatsapp:hover {
+  background-color: rgb(180, 83, 9);
+  color: rgb(255, 255, 255);
+}
+
+.home img {
+  width: 100%;
+  border-radius: 28px;
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.105);
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+}
+
+.about-right p {
+  font-size: 18px;
+  color: rgba(59, 42, 32, 0.719);
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 1.2;
+  margin: 8px 0 25px;
+}
+
+h3 {
+  font-size: 40px;
+  margin: 8px 0 25px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #eadfd5;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.039)
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card div {
+  padding: 24px;
+}
+
+.card div h4 {
+  font-size: 25px;
+}
+
+.card div p {
+  color: rgb(112 94 82);
+  margin-bottom: 18px;
+}
+
+.card div strong {
+  display: block;
+  color: rgb(217 119 6);
+}
+
+.benefits {
+  background-color: rgb(248 234 219);
+}
+
+h5 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.features {
+  padding: 25px;
+  background: rgb(255, 255, 255);
+  border-radius: 14px;
+}
+
+b {
+  font-size: 14px;
+  color: rgb(217, 119, 6);
+}
+
+h6 {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
+
+.features p {
+  display: block;
+  unicode-bidi: isolate;
+  color: rgba(59, 42, 32, 0.719);
+}
+
+.opening-hours {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+}
+
+.opening-hours h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin:8px 0 25px ;
+}
+
+.time-list {
+  background-color: rgb(255 255 255);
+  border: 1px solid rgb(234 223 213);
+  border-radius: 15px;
+  padding: 20px 25px;
+}
+
+.time-list div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgb(238 238 238);
+}
+
+.time-list span {
+  color: rgb(112 94 82);
+}
+
+.time-list b {
+  color: rgb(59 42 32);
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+.contact {
+  background-color: rgb(59 42 32);
+  color: rgb(255 255 255);
+  text-align: center;
+  padding: 90px 8%;
+}
+
+.contact p {
+  margin-bottom: 20px;
+}
+
+.contact h2 {
+  font-size: 40px;
+  line-height: 1.15;
+  margin: 8px 0 25px;
+}
+
+.contact .top {
+  color: rgb(251 191 122);
+}
+
+.text {
+  color: rgb(234 223 213);
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 35px 8%;
+  gap: 25px;
+  background-color: rgb(36 25 18);
+  color: rgb(234 223 213);
+}
+
+footer a {
+  color: rgb(251 191 122);
+}
+
+.copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.72);
+  padding-top: 20px;
+  grid-column: 1 / -1;
+  font-size: 10px;
+}
+
+@media (max-width: 750px)  {
+  header {
+    flex-direction: column;
+    gap: 15px
+  }
+
+  .home {
+    grid-template-columns: 1fr;
+    padding-top: 55px
+  }
+
+  .home img {
+    order: -1
+  }
+
+  .about,
+  .opening-hours {
+    grid-template-columns: 1fr;
+    gap: 30px
+  }
+
+  .grid {
+    grid-template-columns: 1fr
+  }
+
+  .section h2,
+  .contact h2 {
+    font-size: 34px
+  }
+
+  footer {
+    grid-template-columns: 1fr
+  }
+
+  .copyright {
+    grid-column: auto
+  }
+
+  nav {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center
+  }
+}
