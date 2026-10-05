@@ -1,0 +1,107 @@
+SUNRISE BAKERY — CLIENT BRIEF
+===============================
+
+You are a beginner web designer. A normal local business has hired you
+to create its first simple website.
+
+CLIENT:
+Sunrise Bakery — a local bakery in Nairobi, Kenya.
+
+CLIENT REQUEST:
+"Hi! I own Sunrise Bakery. I want a clean, attractive website where
+customers can learn about us, see our products and prices, check our
+opening hours, find us and contact us easily. I don't need payments or
+JavaScript. Please make it work well on phones."
+
+BUSINESS INFORMATION
+--------------------
+Name: Sunrise Bakery
+Tagline: Freshly baked. Every single morning.
+Phone: +254 700 123 456
+Email: hello@sunrisebakery.example
+Location: Nairobi, Kenya
+
+OPENING HOURS
+Monday-Friday: 6:30 AM - 7:00 PM
+Saturday: 7:00 AM - 6:00 PM
+Sunday: 8:00 AM - 2:00 PM
+
+PRODUCTS
+Artisan Bread — KSh 180
+Celebration Cake — From KSh 1,500
+Fresh Pastries — From KSh 120
+
+PAGES/SECTIONS REQUIRED
+-----------------------
+1. Header + navigation
+2. Home / hero
+3. About
+4. Products/Menu
+5. Why choose us
+6. Opening hours
+7. Contact/location
+8. Footer
+
+LINKS TO USE
+------------
+Home: #home
+About: #about
+Menu: #menu
+Contact: #contact
+Call: tel:+254700123456
+Email: mailto:hello@sunrisebakery.example
+WhatsApp: https://wa.me/254700123456
+Map: https://www.google.com/maps/search/?api=1&query=Nairobi%2C%20Kenya
+Instagram practice link: https://www.instagram.com/
+Facebook practice link: https://www.facebook.com/
+
+IMPORTANT:
+The social links above are practice links. In a real project the client
+would provide their actual social-media pages.
+
+IMAGES
+------
+Use the supplied SVG images in the assets folder:
+hero.svg
+bread.svg
+cake.svg
+pastry.svg
+
+TECHNICAL RULES
+---------------
+HTML + CSS ONLY.
+No JavaScript.
+No Bootstrap.
+No React.
+No Tailwind.
+No external libraries.
+
+YOUR PRACTICE GOAL
+------------------
+Pretend I am your client. Build the website from the requirements above.
+
+Try to do these yourself:
+- semantic HTML
+- navigation links
+- image elements and alt text
+- Flexbox
+- CSS Grid
+- buttons
+- cards
+- hover effects
+- spacing and typography
+- responsive/mobile layout
+- telephone, email and WhatsApp links
+
+CLIENT ACCEPTANCE TEST
+----------------------
+The client should be able to:
+✓ understand the business quickly
+✓ see products and prices
+✓ see opening hours
+✓ contact the bakery
+✓ find the location
+✓ use the navigation
+✓ use the website on a phone
+
+Start with the STARTER folder. Use REFERENCE only after attempting it.

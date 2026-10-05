@@ -1,0 +1,119 @@
+personal-web.js (
+  Home page
+  Services
+  Service cards
+  Order buttons
+)
+
+cart.js (
+  Cart
+  Selected services
+  Cart quantity
+  Opening cart
+  Removing services
+  Order form
+)
+
+money.js (
+  Currency formatting
+)
+
+personal-web.js
+  │
+  │ "Here are the services."
+  ↓
+services
+  │
+  ↓
+cart.js
+  │
+  │ "I'll keep track of what
+  │  the customer selected."
+  ↓
+cart
+
+1. personal-web.js starts
+        ↓
+2. Services are loaded
+        ↓
+3. Service cards are created
+        ↓
+4. Order buttons are placed on page
+        ↓
+5. setupCart() runs
+        ↓
+6. cart.js can now find the Order buttons
+
+Order button
+     ↓
+Get service ID
+     ↓
+Find service
+     ↓
+Add service to cart array
+     ↓
+Console shows cart
+
+personal-web.js
+    ↓
+Displays services
+    ↓
+Creates Order buttons
+
+
+cart.js
+    ↓
+Receives clicks
+    ↓
+Finds selected services
+    ↓
+Stores them in cart
+    ↓
+Updates cart quantity
+
+
+**
+
+let cartQuantity = 0;
+const cartQuantityElement = document.querySelector('.js-cart-quantity');
+
+function updateCartQuantity () {
+  cartQuantityElement.innerHTML = cartQuantity;
+}
+
+document.querySelectorAll('.order-button[data-service-id]').forEach((button) => {
+  button.addEventListener('click', () => {
+    cartQuantity += 1;
+    updateCartQuantity();
+  });
+});
+
+updateCartQuantity();
+
+**
+
+export let cart = [];
+
+const cartQuantityElement = document.querySelector('.js-cart-quantity');
+
+function updateCartQuantity () {
+  cartQuantityElement.innerHTML = cart.length;
+}
+
+document.querySelectorAll('.order-button[data-service-id]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const serviceId = button.dataset.serviceId;
+
+    const selectedService = services.find((service) => {
+      return service.id === serviceId;
+    });
+
+    cart.push(selectedService);
+
+    updateCartQuantity();
+
+  });
+
+});
+
+updateCartQuantity();
