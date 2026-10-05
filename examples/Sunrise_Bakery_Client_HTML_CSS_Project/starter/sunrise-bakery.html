@@ -1,171 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sunrise Bakery</title>
-  <link rel="stylesheet" href="sunrise-bakery.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunrise Bakery</title>
+    <link rel="stylesheet" href="sunrise-bakery.css">
+  </head>
 
-<body>
+  <body>
 
-  <!-- TASK 1: Header and navigation -->
+    <!-- TASK 1: Header and navigation -->
 
-  <header>
-    <div class="logo">
-      <a href="#Home">SUNRISE <span>BAKERY</span></a>
-    </div>
-    <nav>
-      <a href="#Home">Home</a>
-      <a href="#About">About</a>
-      <a href="menu.html">Menu</a>
-      <a href="#Contacts">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-
-    <!-- TASK 2: Hero section -->
-
-    <section id="Home" class="home">
-      <div>
-        <p class="top">
-          NAIROBI'S FRIENDLY LOCAL BAKERY
-        </p>
-        <h1>
-          Freshly baked.<br>Every single morning.
-        </h1>
-        <p class="p2">
-          Warm bread, beautiful cakes and delicious pastries made with care for our community.
-        </p>
-        <a class="menu-button" href="menu.html">See Our Menu</a>
+    <header>
+      <div class="logo">
+        <a href="#Home">SUNRISE <span>BAKERY</span></a>
       </div>
-      <img src="../assets/hero.svg" alt="Sunrise Bakery">
-    </section>
+      <nav>
+        <a href="#Home">Home</a>
+        <a href="#About">About</a>
+        <a href="#Menu">Menu</a>
+        <a href="#Contacts">Contact</a>
+      </nav>
+    </header>
 
+    <main>
 
-    <!-- TASK 3: About section -->
+      <!-- TASK 2: Hero section -->
 
-    <section id="About" class="about">
-      <div class="about-left">
+      <section id="Home" class="home">
+        <div>
+          <p class="top">
+            NAIROBI'S FRIENDLY LOCAL BAKERY
+          </p>
+          <h1>
+            Freshly baked.<br>Every single morning.
+          </h1>
+          <p class="p2">
+            Warm bread, beautiful cakes and delicious pastries made with care for our community.
+          </p>
+          <a class="menu-button" href="#Menu">See Our Menu</a>
+          <a class="whatsapp" href="https://wa.me/254700123456">Order on WhatsApp</a>
+        </div>
+        <img src="../assets/hero.svg" alt="Sunrise Bakery">
+      </section>
+      
+
+      <!-- TASK 3: About section -->
+
+      <section id="About" class="about">
+        <div class="about-left">
         <p class="top">
           ABOUT US
         </p>
         <h2>
           Good baking, simple ingredients, happy customers.
         </h2>
-      </div>
-      <div class="about-right">
-        <p>
-          Sunrise Bakery is a local Nairobi bakery serving freshly baked bread, pastries and celebration cakes. We
-          believe good food should be fresh, affordable and made with care.
+        </div>
+        <div class="about-right">
+          <p>
+            Sunrise Bakery is a local Nairobi bakery serving freshly baked bread, pastries and celebration cakes. We believe good food should be fresh, affordable and made with care.
+          </p>
+        </div>
+      </section>
+
+      <!-- TASK 4: Products/Menu section.Images are in ../assets/ -->
+
+      <section id="Menu" class="menu">
+        <p class="top">
+          OUR MENU
         </p>
+        <h3>
+          Customer favourites
+        </h3>
+        <div class="grid">
+          <article class="card">
+            <img src="../assets/bread.svg" alt="Artisan Bread">
+            <div>
+              <h4>
+                Artisan Bread
+              </h4>
+              <p>
+                Fresh handmade bread with a golden crust.
+              </p>
+              <strong>KSh 180</strong>
+            </div>
+          </article>
+          <article class="card">
+           <img src="../assets/cake.svg" alt="Celebration Cake">
+            <div>
+              <h4>
+                Celebration Cake
+              </h4>
+              <p>
+                Custom cakes for birthdays and special occasions.
+              </p>
+              <strong>From KSh 1,500</strong>
+            </div>
+          </article>
+          <article class="card">
+           <img src="../assets/pastry.svg" alt="Fresh pastries">
+            <div>
+              <h4>
+                Fresh Pastries
+              </h4>
+              <p>
+                Buttery, flaky pastries baked throughout the day.
+              </p>
+              <strong>From KSh 120</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- TASK 5: Why choose us section -->
+      
+      <section class="benefits">
+        <p class="top">
+          WHY US
+        </p>
+        <h5>
+          Made for your everyday moments
+        </h5>
+        <div class="grid">
+          <div class="features">
+            <b>01</b>
+            <h6>Fresh Daily</h6>
+            <p>
+              We bake every morning so you get products at their best.
+            </p>
+          </div>
+          <div class="features">
+            <b>02</b>
+            <h6>Made With Care</h6>
+            <p>
+              Simple ingredients and careful preparation go into every order.
+            </p>
+          </div>
+          <div class="features">
+            <b>03</b>
+            <h6>Local & Friendly</h6>
+            <p>
+              A neighbourhood bakery that values every customer.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TASK 6: Opening hours -->
+
+      <section class="opening-hours">
+        <div class="left">
+          <p class="top">COME VISIT</p>
+          <h2>Opening hours</h2>
+        </div>
+        <div class="time-list">
+          <div>
+            <span>Monday – Friday</span>
+            <b>6:30 AM – 7:00 PM</b>
+          </div>
+          <div>
+            <span>Saturday</span>
+            <b>7:00 AM – 6:00 PM</b>
+          </div>
+          <div>
+            <span>Sunday</span>
+            <b>8:00 AM – 2:00 PM</b>
+          </div>
+        </div>
+      </section>
+
+      <!-- TASK 7: Contact and location section -->
+
+      <section id="Contacts" class="contact">
+        <p class="top">
+          GET IN TOUCH
+        </p>
+        <h2>
+          Ready for something fresh?
+        </h2>
+        <p class="text">
+          Call, email or message us before your visit.
+        </p>
+        <a class="menu-button" href="tel:+254700123456">
+          Call Us
+        </a>
+        <a class="whatsapp" href="mailto:hello@sunrisebakery.example">
+          Email Us
+        </a>
+        <a class="whatsapp" href="https://www.google.com/maps/search/?api=1query=Nairobi%2C%20Kenya">
+          Find Us
+        </a>
+      </section>
+    </main>
+
+    <!-- TASK 8: Footer -->
+
+    <footer>
+      <div>
+        <strong>SUNRISE BAKERY</strong>
+        <p>Freshly baked. Every single morning.</p>
       </div>
-    </section>
-
-    <!-- TASK 4: Products/Menu section.Images are in ../assets/ -->
-
-
-
-    <!-- TASK 5: Why choose us section -->
-
-    <section class="benefits">
-      <p class="top">
-        WHY US
-      </p>
-      <h5>
-        Made for your everyday moments
-      </h5>
-      <div class="grid">
-        <div class="features">
-          <b>01</b>
-          <h6>Fresh Daily</h6>
-          <p>
-            We bake every morning so you get products at their best.
-          </p>
-        </div>
-        <div class="features">
-          <b>02</b>
-          <h6>Made With Care</h6>
-          <p>
-            Simple ingredients and careful preparation go into every order.
-          </p>
-        </div>
-        <div class="features">
-          <b>03</b>
-          <h6>Local & Friendly</h6>
-          <p>
-            A neighbourhood bakery that values every customer.
-          </p>
-        </div>
+      <div>
+        Nairobi, Kenya
+        <br>
+        <a href="https://www.instagram.com/">Instagram</a>
+        .
+        <a href="https://www.facebook.com/">Facebook</a>
       </div>
-    </section>
+      <p class="copyright">© 2026 Sunrise Bakery. Practice client project.</p>
+    </footer>
 
-    <!-- TASK 6: Opening hours -->
-
-    <section class="opening-hours">
-      <div class="left">
-        <p class="top">COME VISIT</p>
-        <h2>Opening hours</h2>
-      </div>
-      <div class="time-list">
-        <div>
-          <span>Monday – Friday</span>
-          <b>6:30 AM – 7:00 PM</b>
-        </div>
-        <div>
-          <span>Saturday</span>
-          <b>7:00 AM – 6:00 PM</b>
-        </div>
-        <div>
-          <span>Sunday</span>
-          <b>8:00 AM – 2:00 PM</b>
-        </div>
-      </div>
-    </section>
-
-    <!-- TASK 7: Contact and location section -->
-
-    <section id="Contacts" class="contact">
-      <p class="top">
-        GET IN TOUCH
-      </p>
-      <h2>
-        Ready for something fresh?
-      </h2>
-      <p class="text">
-        Call, email or message us before your visit.
-      </p>
-      <a class="menu-button" href="tel:+254700123456">
-        Call Us
-      </a>
-      <a class="whatsapp" href="mailto:hello@sunrisebakery.example">
-        Email Us
-      </a>
-      <a class="whatsapp" href="https://www.google.com/maps/search/?api=1query=Nairobi%2C%20Kenya">
-        Find Us
-      </a>
-    </section>
-  </main>
-
-  <!-- TASK 8: Footer -->
-
-  <footer>
-    <div>
-      <strong>SUNRISE BAKERY</strong>
-      <p>Freshly baked. Every single morning.</p>
-    </div>
-    <div>
-      Nairobi, Kenya
-      <br>
-      <a href="https://www.instagram.com/">Instagram</a>
-      .
-      <a href="https://www.facebook.com/">Facebook</a>
-    </div>
-    <p class="copyright">&copy; <span class="js-year">2026</span> Vincent Muriuki. All rights reserved.</p>
-  </footer>
-
-</body>
+  </body>
 
 </html>
