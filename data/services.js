@@ -37,5 +37,6 @@ export const services = [{
   includes: 'Up to 5 pages with interactive features, mobile-friendly, 2 rounds of edits.',
   shortName: 'Multi-Page Website + JavaScript',
   note: '"Hosting and domain name not included."',
-  priceCents: '25000'
+  priceCents: '25000',
+  example: 'examples/honest-online-shop/index.html'
 }];

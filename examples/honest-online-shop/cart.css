@@ -1,0 +1,175 @@
+header {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  position: fixed;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-quantity {
+  position: absolute;
+  right: 315px;
+  top: 14px;
+}
+
+form[hidden] {
+  display: none;
+}
+
+body {
+  background-color: rgba(3, 116, 116, 0.387);
+  color: rgb(2, 90, 144);
+}
+
+.order-items {
+  list-style: none;
+  margin: 0;
+  padding: 15px;
+}
+
+.order-items li {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 18px;
+}
+
+.order-items-price {
+  font-weight: 800;
+}
+
+.order-total {
+  font-size: 20px;
+  font-weight: 800px;
+  margin: 14px 0 0;
+}
+
+.order-form-box {
+  font-size: 20px;
+}
+
+.confirm-order {
+  padding: 10px 8px;
+}
+
+form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  line-height: 1;
+  color: rgb(2, 90, 144);
+  cursor: pointer;
+}
+
+.order-form label {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.order-form input,
+.order-form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  font: inherit;
+  color: rgb(40, 24, 1);
+  background-color: white;
+  border: 2px solid brown;
+  border-radius: 6px;
+}
+
+.submit-order {
+  margin-top: 16px;
+  padding: 12px;
+  font: inherit;
+  font-weight: 800;
+  color: white;
+  background-color: brown;
+  border: 2px solid brown;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.submit-order:hover {
+  background-color: bisque;
+  color: brown;
+}
+
+.submit-order:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.order-status {
+  margin: 8px 0 0;
+  font-weight: 700;
+}
+
+.order-status.is-error {
+  color: darkred;
+}
+
+.remove-item {
+  grid-column: 1 / -1;
+  justify-self: start;
+  background: none;
+  border: none;
+  padding: 0;
+  color: brown;
+  text-decoration: underline;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.remove-item:hover {
+  color: darkred;
+}
+
+.phone-field {
+  display: flex;
+  gap: 8px;
+}
+
+.phone-field select {
+  flex: 0 0 auto;
+  max-width: 45%;
+  box-sizing: border-box;
+  padding: 10px;
+  font: inherit;
+  color: rgb(40, 24, 1);
+  background-color: white;
+  border: 2px solid brown;
+  border-radius: 6px;
+}
+
+.phone-field input {
+  flex: 1;
+  min-width: 0;
+  width: auto;
+}
+
+
+@media (max-width: 1024px) {
+
+}
