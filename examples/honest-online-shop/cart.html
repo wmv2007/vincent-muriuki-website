@@ -13,16 +13,20 @@
 
   <header>
     <div class="left-section">
-      <p class="shop-logo">HONEST <span>SHOPPERS</span></p>
+      <a class="left" href="index.html">
+        <p class="shop-logo">HONEST <span>SHOPPERS</span></p>
+      </a>
     </div>
 
     <div class="right-section">
       <p class="cart">Cart</p>
-      <a href="cart.html">
-        <img class="cart-icon" src="../../examples/javascript-amazon-project-main/images/icons/cart-icon.png"
-          alt="cart icon">
-      </a>
-      <p class="cart-quantity">0</p>
+      <div class="cart-right">
+        <a class="cart-link" href="cart.html">
+          <img class="cart-icon" src="../../examples/javascript-amazon-project-main/images/icons/cart-icon.png"
+            alt="cart icon">
+        </a>
+        <p class="cart-quantity js-cart-quantity">0</p>
+      </div>
     </div>
   </header>
 
@@ -31,55 +35,64 @@
       <h2>Order Summary</h2>
 
       <ul class="order-items"></ul>
-      <p>Total: $<span>0.00</span></p>
-      <button class="confirm-order" type="button">Confirm Order</button>
+      <p>Total: $<span class="js-order-total">0.00</span></p>
+      <button class="confirm-order js-cart-button" type="button">Confirm Order</button>
 
-      <form hidden>
-        <button class="close-button" type="button">&times;</button>
+      <div class="order-modal js-order-modal" hidden>
+        <div class="order-modal-box">
+          <button class="modal-close js-modal-close" type="button">&times;</button>
+          <h2>Your Order</h2>
 
-        <label for="first-name">First Name</label>
-        <input id="first-name" name="name" type="text" required>
+          <ul class="order-items js-order-items"></ul>
+          <p>Total: $<span class="js-order-total">0.00</span></p>
+          <form class="order-form js-order-form">
 
-        <label for="last-Name">Last Name</label>
-        <input id="last-Name" name="name" type="text" required>
+            <label for="first-name">First Name</label>
+            <input id="first-name" name="name" type="text" required>
 
-        <label for="customer-email">Email</label>
-        <input id="Customer-email" name="email" type="text" required>
+            <label for="last-Name">Last Name</label>
+            <input id="last-Name" name="name" type="text" required>
 
-        <label for="customer-phone">Phone / WhatsApp</label>
-        <div>
-          <select name="countrycode" id="customer-country-code" aria-label="Country code">
-            <option value="+254" selected>Kenya +254</option>
-            <option value="+256">Uganda +256</option>
-            <option value="+255">Tanzania +255</option>
-            <option value="+250">Rwanda +250</option>
-            <option value="+251">Ethiopia +251</option>
-            <option value="+234">Nigeria +234</option>
-            <option value="+233">Ghana +233</option>
-            <option value="+27">South Africa +27</option>
-            <option value="+20">Egypt +20</option>
-            <option value="+44">United Kingdom +44</option>
-            <option value="+1">USA / Canada +1</option>
-            <option value="+91">India +91</option>
-            <option value="+971">UAE +971</option>
-            <option value="+49">Germany +49</option>
-            <option value="+33">France +33</option>
-          </select>
+            <label for="customer-email">Email</label>
+            <input id="Customer-email" name="email" type="text" required>
 
-          <input type="tel" id="customer-phone" name="phone" inputmode="numeric" placeholder="712345678"
-            autocomplete="tel-national">
+            <label for="customer-phone">Phone / WhatsApp</label>
+            <div>
+              <select name="countrycode" id="customer-country-code" aria-label="Country code">
+                <option value="+254" selected>Kenya +254</option>
+                <option value="+256">Uganda +256</option>
+                <option value="+255">Tanzania +255</option>
+                <option value="+250">Rwanda +250</option>
+                <option value="+251">Ethiopia +251</option>
+                <option value="+234">Nigeria +234</option>
+                <option value="+233">Ghana +233</option>
+                <option value="+27">South Africa +27</option>
+                <option value="+20">Egypt +20</option>
+                <option value="+44">United Kingdom +44</option>
+                <option value="+1">USA / Canada +1</option>
+                <option value="+91">India +91</option>
+                <option value="+971">UAE +971</option>
+                <option value="+49">Germany +49</option>
+                <option value="+33">France +33</option>
+              </select>
+
+              <input type="tel" id="customer-phone" name="phone" inputmode="numeric" placeholder="712345678"
+                autocomplete="tel-national">
+            </div>
+
+            <label for="order-description">leave a review on your experience</label>
+            <textarea name="message" id="customer-review" rows="4"></textarea>
+
+            <button class="submit-order js-confirm-button" type="submit">Place Order</button>
+            <p class="order-status js-order-status"></p>
+          </form>
         </div>
+      </div>
 
-        <label for="order-description">leave a review on your experience</label>
-        <textarea name="message" id="customer-review" rows="4"></textarea>
-
-        <button class="submit-order" type="submit">Place Order</button>
-        <p class="order-status"></p>
-      </form>
     </section>
   </main>
 
-  <script src="scripts/cart.js"></script>
+  <script type="module" src="scripts/cart.js"></script>
 </body>
 
 </html>

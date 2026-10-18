@@ -41,6 +41,15 @@ header {
   color: rgb(9, 86, 86);
 }
 
+.left {
+  text-decoration: none;
+  padding: 10px 8px;
+}
+
+.left:hover {
+  text-decoration: underline 2px rgb(13, 168, 168);
+}
+
 .middle-section {
   display: flex;
   align-items: center;
@@ -86,7 +95,7 @@ header {
 }
 
 .cart-icon:hover {
-  border: 1px solid aqua;
+  border: 3px solid rgb(29, 90, 90);
 }
 
 .cart-right {

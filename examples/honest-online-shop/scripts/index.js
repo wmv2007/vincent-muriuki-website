@@ -1,6 +1,17 @@
 import { productList } from "./data/product-list.js";
 import { convertPrice } from "./data/convertprice.js";
 
+function updateCartQuantity() {
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let cartQuantity = 0;
+
+  cart.forEach((item) => {
+    cartQuantity += item.quantity;
+  });
+
+  document.querySelector('.cart-quantity').innerHTML = cartQuantity;
+}
+
 let productHTML = '';
 
 function renderProducts() {
@@ -42,8 +53,21 @@ const buttons = document.querySelectorAll('.add-cart-button');
 
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
-    const productId = button.getAttribute('data-product-id');
-    document.querySelector('.cart-quantity').innerHTML = parseInt(document.querySelector('.cart-quantity').innerHTML) + 1;
+    const productId = button.dataset.productId;
+    const card = button.closest('.product-grid');
+    const quantity = Number(card.querySelector('select').value);
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const matchingItem = cart.find((item) => item.productId === productId);
+
+    if (matchingItem) {
+      matchingItem.quantity += quantity;
+    } else {
+      cart.push({ productId, quantity });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartQuantity();
   });
 
   button.addEventListener('click', () => {
@@ -56,13 +80,5 @@ buttons.forEach((button) => {
       button.disabled = false;
     }, 500);
   });
-
-  const name = button.dataset.name;
-  const priceCents = button.dataset.priceCents;
-
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-  cart.push({ name: name, priceCents: priceCents });
-  localStorage.setItem('cart', JSON.stringify(cart));
 });
 
