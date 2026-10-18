@@ -7,34 +7,56 @@ const EMAILJS_TEMPLATE_ID = 'template_kp8fnmr';
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
+function getProduct(productId) {
+  return productList.find((product) => product.id === productId);
+}
+
 export function renderOrderItems() {
   let orderHtml = '';
   let totalCents = 0;
 
   cart.forEach((item) => {
-      function getProduct(productId) {
-        return productList.find((product) => product.id === productId);
-      }
     const product = getProduct(item.productId);
-    const lineCents = Number(product.id) * item.quantity
+    const lineCents = product.priceCents * item.quantity
 
     orderHtml += `
-      <li>
-        <span>${item.quantity} &times; ${product.name}</span>
-        <span class="order-item-price">$${convertPrice(lineCents)}</span>
-        <button class="remove-item js-remove-item" type="button" data-service-id="${item.productId}">Remove</button>
+      <li class="order-item">
+        <img class="order-item-image" src="${product.image}" alt="${product.name}">
+        <div class="order-item-details">
+          <p class="order-item-name">${product.name}</p>
+          <p>${item.quantity} * $${convertPrice(product.priceCents)}</p>
+          <p class="order-item-price">$${convertPrice(lineCents)}</p>
+          <button class="remove-item js-remove-item" type="button" data-product-id="${item.productId}">Remove</button>
+        </div>
       </li>
     `;
 
     totalCents += lineCents;
   });
 
+  const taxCents = Math.round(totalCents * 0.10);
+  const grandTotalCents = totalCents + taxCents;
+
+  document.querySelectorAll('.js-subtotal').forEach((el) => {
+    el.textContent = convertPrice(totalCents);
+  });
+
+  document.querySelectorAll('.js-tax').forEach((el) => {
+    el.textContent = convertPrice(taxCents);
+  });
+
+  document.querySelectorAll('.js-order-total').forEach((el) => {
+    el.textContent = convertPrice(grandTotalCents);
+  });
+
   if (cart.length === 0) {
-    orderHtml = '<li>Your cart is empty. Click Order on a service to add it.</li>';
+    orderHtml = '<li class="empty-cart">Your cart is empty. Add items from the shop.</li>';
   }
 
-  document.querySelector('.js-order-items').innerHTML = orderHtml;
-  document.querySelector('.js-order-total').innerHTML = convertPrice(totalCents);
+  document.querySelectorAll('.js-order-items').forEach((list) => {
+    list.innerHTML = orderHtml;
+  });
+  document.querySelectorAll('.js-order-total').innerHTML = convertPrice(totalCents);
 
 }
 
@@ -93,7 +115,7 @@ function getTotalCents() {
     total += Number(product.priceCents) * item.quantity;
   });
 
-  return total;
+  return total + Math.round(total * 0.10);
 }
 
 function buildOrderText() {
@@ -113,6 +135,8 @@ export function setupCart() {
   }
 
   console.log('setupCart is running');
+  renderOrderItems();
+  updateCartQuantity();
 
     document.querySelectorAll('.order-button[data-product-id]').forEach((button) => {
       button.addEventListener('click', () => {
@@ -122,14 +146,28 @@ export function setupCart() {
 
   const modal = document.querySelector('.js-order-modal');
 
+  const hint = document.querySelector('.js-modal-hint');
+  let hintTimer;
+
+  function showHint() {
+    hint.classList.add('is-visible');
+    clearTimeout(hintTimer);
+    hintTimer = setTimeout(() => {
+      hint.classList.remove('is-visible');
+    }, 3000);
+  }
+
   document.querySelector('.js-cart-button').addEventListener('click', () => {
     setStatus('');
     renderOrderItems();
     modal.hidden = false;
+    showHint();
   });
 
   function closeModal() {
     modal.hidden = true;
+    clearTimeout(hintTimer);
+    hint.classList.remove('is-visible');
   }
 
   document.querySelector('.js-modal-close').addEventListener('click', closeModal);
@@ -141,7 +179,7 @@ export function setupCart() {
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
+    if (event.key === 'Escape' && !modal.hidden) {
       closeModal();
     }
   });
@@ -150,7 +188,7 @@ export function setupCart() {
     const removeButton = event.target.closest('.js-remove-item');
 
     if (removeButton) {
-      removeFromCart(removeButton.dataset.serviceId);
+      removeFromCart(removeButton.dataset.productId);
     }
   });
 
@@ -175,7 +213,7 @@ export function setupCart() {
       fullPhone = `${countryCode}${digits}`;
     }
 
-    const submitButton = form.querySelector('.send-order-button');
+    const submitButton = form.querySelector('.js-confirm-button');
 
     submitButton.disabled = true;
     setStatus('Sending your order...');
@@ -195,7 +233,7 @@ export function setupCart() {
       updateCartQuantity();
       localStorage.setItem('cart', JSON.stringify(cart));
       renderOrderItems();
-      setStatus('Order sent! I will contact you soon.');
+      setStatus('Order sent! Your order is under package and will be delivered soon. Contact for updates and more info.');
     } catch (error) {
       console.error('Send failed:', error.message, error);
       setStatus('The order could not be sent. Please try again or contact me on WhatsApp.', true);

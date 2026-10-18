@@ -34,17 +34,24 @@
     <section class="order-form-box">
       <h2>Order Summary</h2>
 
-      <ul class="order-items"></ul>
-      <p>Total: $<span class="js-order-total">0.00</span></p>
+      <ul class="order-items js-order-items"></ul>
+
+      <div class="payment">
+        <p>Subtotal: $<span class="js-subtotal">0.00</span></p>
+        <p>Tax (10%): $<span class="js-tax">0.00</span></p>
+        <p><strong>Total: $<span class="js-order-total">0.00</span></strong></p>
+      </div>
       <button class="confirm-order js-cart-button" type="button">Confirm Order</button>
 
       <div class="order-modal js-order-modal" hidden>
         <div class="order-modal-box">
           <button class="modal-close js-modal-close" type="button">&times;</button>
+          <p class="modal-hint js-modal-hint">Press Esc to close</p>
           <h2>Your Order</h2>
 
-          <ul class="order-items js-order-items"></ul>
-          <p>Total: $<span class="js-order-total">0.00</span></p>
+          <p>Subtotal: $<span class="js-subtotal">0.00</span></p>
+          <p>Tax (10%): $<span class="js-tax">0.00</span></p>
+          <p><strong>Total: $<span class="js-order-total">0.00</span></strong></p>
           <form class="order-form js-order-form">
 
             <label for="first-name">First Name</label>
@@ -92,6 +99,7 @@
     </section>
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="module" src="scripts/cart.js"></script>
 </body>
 

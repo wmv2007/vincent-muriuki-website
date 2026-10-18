@@ -48,6 +48,7 @@ function renderProducts() {
 }
 
 renderProducts();
+updateCartQuantity();
 
 const buttons = document.querySelectorAll('.add-cart-button');
 

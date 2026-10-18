@@ -9,13 +9,13 @@ function renderHomeTab () {
       ${homeTabContent.head}
     </h2>
   
-    <h1>
+    <h1 class="hero-title">
       ${homeTabContent.intro}
     </h1>
-    <p>
+    <p class="hero-text">
       ${homeTabContent.description}
     </p>
-    <p class="mission">
+    <p class="mission hero-tagline">
       ${homeTabContent.mission}
     </p>
   `;
@@ -78,6 +78,34 @@ function setUpMenu() {
   });
 
 }
+
+function typeText(element, duration) {
+
+  const text = element.textContent;
+  const speed = duration / text.length;
+
+  element.style.minHeight = element.offsetHeight + 'px';
+  element.textContent = '';
+  element.style.visibility = 'visible';
+
+  let i = 0;
+  const timer = setInterval(() => {
+    i++;
+    element.textContent = text.slice(0, i);
+    if (i >= text.length) {
+      clearInterval(timer);
+    }
+  }, speed);
+
+}
+
+function playHeroAnimation() {
+  typeText(document.querySelector('.hero-title'), 2000);
+  typeText(document.querySelector('.hero-text'), 2000);
+  typeText(document.querySelector('.hero-tagline'), 2000);
+}
+
+playHeroAnimation();
 
 
 setUpMenu();
