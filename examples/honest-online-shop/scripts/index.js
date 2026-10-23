@@ -12,10 +12,10 @@ function updateCartQuantity() {
   document.querySelector('.cart-quantity').innerHTML = cartQuantity;
 }
 
-let productHTML = '';
 
-function renderProducts() {
-  productList.forEach((product) => {
+function renderProducts(lists) {
+  let productHTML = '';
+  lists.forEach((product) => {
     productHTML += `
       <section class="product-grid">
         <div class="image">
@@ -47,7 +47,7 @@ function renderProducts() {
   document.querySelector('.js-main').innerHTML = productHTML;
 }
 
-renderProducts();
+renderProducts(productList);
 updateCartQuantity();
 
 const buttons = document.querySelectorAll('.add-cart-button');
@@ -83,3 +83,20 @@ buttons.forEach((button) => {
   });
 });
 
+const searchInput = document.getElementById('search');
+searchInput.addEventListener('input', () => {
+  const text = searchInput.value.toLowerCase();
+  const matches = productList.filter(product => 
+    product.name.toLowerCase().includes(text)
+  );
+  renderProducts(matches);
+});
+
+const searchButton = document.getElementById('search-button');
+searchButton.addEventListener('click', () => {
+  const text = searchInput.value.toLowerCase();
+  const matches = productList.filter(product => 
+    product.name.toLowerCase().includes(text)
+  );
+  renderProducts(matches);
+});
